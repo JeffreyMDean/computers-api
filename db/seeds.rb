@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+computer1 = Computer.new(make: "Apple", model: "Macbook", year: "2023")
+computer1.save
+
+computer2 = Computer.new(make: "Dell", model: "Inspiron", year: "2017")
+computer2.save
