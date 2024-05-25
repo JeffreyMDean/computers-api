@@ -8,4 +8,11 @@ class ComputersControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal Computer.count, data.length
   end
+
+  test "create" do
+    assert_difference "Computer.count", 1 do
+      post "/computers.json", params: { make: "Apple", model: "Macbook Air", year: "2020" }
+      assert_response 200
+    end
+  end
 end
