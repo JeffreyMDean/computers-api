@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/computers" => "computers#index"
   post "/computers" => "computers#create"
   get "/computers/:id" => "computers#show"
+  patch "/computers/:id" => "computers#update"
 end

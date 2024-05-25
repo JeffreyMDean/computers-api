@@ -17,4 +17,14 @@ class ComputersController < ApplicationController
     @computer = Computer.find_by(id: params[:id])
     render :show
   end 
+
+  def update
+    @computer = Computer.find_by(id: params[:id])
+    @computer.update(
+      make: params[:make] || @computer.make,
+      model: params[:model] || @computer.model,
+      year: params[:year] || @computer.year
+    )
+    render :show
+  end
 end
