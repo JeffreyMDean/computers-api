@@ -27,4 +27,10 @@ class ComputersController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @computer = Computer.find_by(id: params[:id])
+    @computer.destroy
+    render json: { message: "Computer destroyed!" }
+  end
 end

@@ -34,4 +34,11 @@ class ComputersControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Updated model", data["model"]
     assert_equal "Updated year", data["year"]
   end
+
+  test "destroy" do
+    assert_difference "Computer.count", -1 do
+      delete "/computers/#{Computer.first.id}.json"
+      assert_response 200
+    end
+  end
 end
