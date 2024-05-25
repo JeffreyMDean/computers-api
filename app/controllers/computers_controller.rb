@@ -12,4 +12,9 @@ class ComputersController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @computer = Computer.find_by(id: params[:id])
+    render :show
+  end 
 end

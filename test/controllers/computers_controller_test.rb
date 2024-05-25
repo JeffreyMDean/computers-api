@@ -15,4 +15,12 @@ class ComputersControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/computers/#{Computer.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["id", "make", "model", "year", "created_at", "updated_at"], data.keys
+  end
 end
