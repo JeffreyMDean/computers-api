@@ -4,6 +4,7 @@ class CreateComputers < ActiveRecord::Migration[7.1]
       t.string :make
       t.string :model
       t.string :year
+      t.string :review
       t.timestamps
     end
   end

@@ -8,7 +8,8 @@ class ComputersController < ApplicationController
     @computer = Computer.create(
       make: params[:make],
       model: params[:model],
-      year: params[:year]
+      year: params[:year],
+      review: params[:review]
     )
     render :show
   end

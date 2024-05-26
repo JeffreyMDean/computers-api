@@ -11,7 +11,7 @@ class ComputersControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Computer.count", 1 do
-      post "/computers.json", params: { make: "Apple", model: "Macbook Air", year: "2020" }
+      post "/computers.json", params: { make: "Apple", model: "Macbook Air", year: "2020", review: "A" }
       assert_response 200
     end
   end
